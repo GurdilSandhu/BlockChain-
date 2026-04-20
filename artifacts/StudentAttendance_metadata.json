@@ -1,0 +1,124 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "attend",
+						"type": "bool"
+					}
+				],
+				"name": "CSE",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "attend",
+						"type": "bool"
+					}
+				],
+				"name": "English",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "attend",
+						"type": "bool"
+					}
+				],
+				"name": "IT",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "attend",
+						"type": "bool"
+					}
+				],
+				"name": "SSt",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "attend",
+						"type": "bool"
+					}
+				],
+				"name": "Science",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "Total_count",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Practice/StudentAttendance.sol": "StudentAttendance"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Practice/StudentAttendance.sol": {
+			"keccak256": "0x26da5011a0c17b9d5967533c22241fdb8ca088d22ac1f90da6589e4a10d1545d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ddb356156edc32c31bc66aac75cbd9e19e4cfa2f1046fc18a94304adb013777b",
+				"dweb:/ipfs/QmSXRqwUCsEQv6HRT7qtp3oz4rsgGDficnr7Nf9TndZQe4"
+			]
+		}
+	},
+	"version": 1
+}

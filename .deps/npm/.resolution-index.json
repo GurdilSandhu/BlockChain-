@@ -119,5 +119,13 @@
         "file": "Practice/TicketBooking.sol"
       }
     }
+  },
+  "Practice/StudentAttendance.sol": {
+    "__sources__": {
+      "Practice/StudentAttendance.sol": {
+        "content": "// Student Attendance Tracker\r\n// Problem:\r\n\r\n// Requirements:\r\n// Mark attendance for a student\r\n// Maintain count of attended classes\r\n\r\n// Conditions:\r\n// A student cannot be marked present more than once for the same session\r\n// Attendance count should not exceed total sessions\r\n// Invalid student entries should be rejected\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract StudentAttendance{\r\n    bool isPresent;\r\n    uint public Total_count;\r\n    uint CSEcount;\r\n    uint SCIcount;\r\n    uint SSTcount;\r\n    uint ITcount;\r\n    uint ENGcount;\r\n\r\n    function CSE(bool attend) public{\r\n        if(attend==true && CSEcount<1){\r\n            isPresent=true;\r\n            CSEcount++;\r\n            Total_count++;\r\n        }\r\n        isPresent = false;\r\n    }\r\n\r\n    function Science(bool attend) public{\r\n        if(attend==true && SCIcount<1){\r\n            isPresent=true;\r\n            SCIcount++;\r\n            Total_count++;\r\n        }\r\n        isPresent= false;\r\n    }\r\n\r\n    function SSt(bool attend) public{\r\n        if(attend==true && SSTcount<1){\r\n            isPresent=true;\r\n            SSTcount++;\r\n            Total_count++;\r\n        }\r\n        isPresent= false;\r\n    }\r\n\r\n    function IT(bool attend) public{\r\n        if(attend==true && ITcount<1){\r\n            isPresent=true;\r\n            ITcount++;\r\n            Total_count++;\r\n        }\r\n        isPresent= false;\r\n    }\r\n\r\n    function English(bool attend) public{\r\n        if(attend==true && ENGcount<1){\r\n            isPresent=true;\r\n            ENGcount++;\r\n            Total_count++;\r\n        }\r\n        isPresent= false;\r\n    }\r\n\r\n}",
+        "file": "Practice/StudentAttendance.sol"
+      }
+    }
   }
 }
