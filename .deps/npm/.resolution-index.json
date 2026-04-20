@@ -88,22 +88,6 @@
       }
     }
   },
-  "learning/bank.sol": {
-    "__sources__": {
-      "learning/bank.sol": {
-        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\n// contract Bank{\r\n\r\n//     uint Total_balance = 0;\r\n\r\n//     //internal check\r\n//     assert(Total_balance>=amount);\r\n\r\n//     function deposite(uint amount) public{\r\n        \r\n//         require(amount>0 ,\"amount must be greater than 0\");\r\n        \r\n//         Total_balance+= amount;\r\n//     }\r\n\r\n//     function withdraw(uint amount) public{\r\n\r\n//         if(amount>balance){\r\n//             revert()\r\n//         }\r\n//     }\r\n\r\n// }\r\n\r\n\r\ncontract BankExample {\r\n\r\n    uint public balance = 1000;\r\n\r\n    // Add amount\r\n    function deposit(uint amount) public {\r\n        require(amount > 0, \"Amount must be greater than 0\"); //  input validation\r\n\r\n        balance += amount;\r\n\r\n        // Internal check (should never fail)\r\n        assert(balance >= amount); //  internal invariant\r\n    }\r\n\r\n    // Withdraw amount\r\n    function withdraw(uint amount) public {\r\n        if (amount > balance) {\r\n            revert(\"Insufficient balance\"); //  custom condition\r\n        }\r\n\r\n        balance -= amount;\r\n\r\n        // Internal safety check\r\n        assert(balance >= 0 && balance>=400);//balance should be greater than 400\r\n    }\r\n}",
-        "file": "learning/bank.sol"
-      }
-    }
-  },
-  "learning/Inventory.sol": {
-    "__sources__": {
-      "learning/Inventory.sol": {
-        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract Inventory{\r\n\r\n    uint public Total_available\r\n}",
-        "file": "learning/Inventory.sol"
-      }
-    }
-  },
   "Practice/IncreDecre.sol": {
     "__sources__": {
       "Practice/IncreDecre.sol": {
@@ -125,6 +109,22 @@
       "Practice/StudentAttendance.sol": {
         "content": "// Student Attendance Tracker\r\n// Problem:\r\n\r\n// Requirements:\r\n// Mark attendance for a student\r\n// Maintain count of attended classes\r\n\r\n// Conditions:\r\n// A student cannot be marked present more than once for the same session\r\n// Attendance count should not exceed total sessions\r\n// Invalid student entries should be rejected\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract StudentAttendance{\r\n    bool isPresent;\r\n    uint public Total_count;\r\n    uint CSEcount;\r\n    uint SCIcount;\r\n    uint SSTcount;\r\n    uint ITcount;\r\n    uint ENGcount;\r\n\r\n    function CSE(bool attend) public{\r\n        if(attend==true && CSEcount<1){\r\n            isPresent=true;\r\n            CSEcount++;\r\n            Total_count++;\r\n        }\r\n        isPresent = false;\r\n    }\r\n\r\n    function Science(bool attend) public{\r\n        if(attend==true && SCIcount<1){\r\n            isPresent=true;\r\n            SCIcount++;\r\n            Total_count++;\r\n        }\r\n        isPresent= false;\r\n    }\r\n\r\n    function SSt(bool attend) public{\r\n        if(attend==true && SSTcount<1){\r\n            isPresent=true;\r\n            SSTcount++;\r\n            Total_count++;\r\n        }\r\n        isPresent= false;\r\n    }\r\n\r\n    function IT(bool attend) public{\r\n        if(attend==true && ITcount<1){\r\n            isPresent=true;\r\n            ITcount++;\r\n            Total_count++;\r\n        }\r\n        isPresent= false;\r\n    }\r\n\r\n    function English(bool attend) public{\r\n        if(attend==true && ENGcount<1){\r\n            isPresent=true;\r\n            ENGcount++;\r\n            Total_count++;\r\n        }\r\n        isPresent= false;\r\n    }\r\n\r\n}",
         "file": "Practice/StudentAttendance.sol"
+      }
+    }
+  },
+  "learning/bank.sol": {
+    "__sources__": {
+      "learning/bank.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\n// contract Bank{\r\n\r\n//     uint Total_balance = 0;\r\n\r\n//     //internal check\r\n//     assert(Total_balance>=amount);\r\n\r\n//     function deposite(uint amount) public{\r\n        \r\n//         require(amount>0 ,\"amount must be greater than 0\");\r\n        \r\n//         Total_balance+= amount;\r\n//     }\r\n\r\n//     function withdraw(uint amount) public{\r\n\r\n//         if(amount>balance){\r\n//             revert()\r\n//         }\r\n//     }\r\n\r\n// }\r\n\r\n\r\ncontract BankExample {\r\n\r\n    uint public balance = 1000;\r\n\r\n    // Add amount\r\n    function deposit(uint amount) public {\r\n        require(amount > 0, \"Amount must be greater than 0\"); //  input validation\r\n\r\n        balance += amount;\r\n\r\n        // Internal check (should never fail)\r\n        assert(balance >= amount); //  internal invariant\r\n    }\r\n\r\n    // Withdraw amount\r\n    function withdraw(uint amount) public {\r\n        if (amount > balance) {\r\n            revert(\"Insufficient balance\"); //  custom condition\r\n        }\r\n\r\n        balance -= amount;\r\n\r\n        // Internal safety check\r\n        assert(balance >= 0 && balance>=400);//balance should be greater than 400\r\n    }\r\n}",
+        "file": "learning/bank.sol"
+      }
+    }
+  },
+  "learning/Inventory.sol": {
+    "__sources__": {
+      "learning/Inventory.sol": {
+        "content": "// Inventory Management System\r\n// Problem:\r\n\r\n// Create a contract to manage warehouse inventory.\r\n\r\n// Requirements:\r\n// Add stock\r\n// Remove stock\r\n// Track total available items\r\n// Conditions:\r\n\r\n// Cannot add zero items\r\n// Cannot remove more items than available\r\n// Inventory should never become negative\r\n\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract Inventory{\r\n\r\n    uint public Total_available_items;\r\n\r\n    function AddStock(uint items) public{\r\n        // Cannot add zero items\r\n        require(items>0,\"Insufficient Items\");\r\n\r\n        Total_available_items+=items;\r\n\r\n    }\r\n\r\n    function RemoveItems(uint items) public{\r\n        // Cannot remove more items than available\r\n        if(Total_available_items<0 || Total_available_items<items){  \r\n            revert(\"More or less Items than in inventory\");\r\n        }\r\n        Total_available_items-=items;\r\n\r\n        assert(Total_available_items>=0);//never become negative\r\n    }\r\n}",
+        "file": "learning/Inventory.sol"
       }
     }
   }

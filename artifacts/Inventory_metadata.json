@@ -1,0 +1,85 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "items",
+						"type": "uint256"
+					}
+				],
+				"name": "AddStock",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "items",
+						"type": "uint256"
+					}
+				],
+				"name": "RemoveItems",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "Total_available_items",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"learning/Inventory.sol": "Inventory"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"learning/Inventory.sol": {
+			"keccak256": "0x90b00e0e4db92b3584fc2096c052da11b0ed64fc4a5242fbf14facc50994f7b6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://30ccd9817c027fb708692586cbb285e5bfe1ddcd9bb15be60ca09b74dd534df2",
+				"dweb:/ipfs/QmVxi4MxUMGkgzuvssaYHnTsqts1e3vBB8YK4aYxhFPohN"
+			]
+		}
+	},
+	"version": 1
+}
