@@ -33,6 +33,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "checkBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getAllUsers",
 				"outputs": [
 					{
@@ -78,11 +91,11 @@
 	},
 	"sources": {
 		"Practice/BankDepositeSystem.sol": {
-			"keccak256": "0x0de3337b6ffd499420583ec52aab780a172185e89f95a51664d4d45a852b8f53",
+			"keccak256": "0xd4880d3ea2bb922b5fe0a859dfb133c507377fd0d5234a94cb62e1b91870d10b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://56f84a44eee76ceb2fcb1f7ad7b2721d04b098e3c8023ed983d6c382aa2d7c89",
-				"dweb:/ipfs/QmTKubjqwYo29rqRHb7MPqVVzPb9WWx1QCN4qQ2MRRTZCA"
+				"bzz-raw://d072dd902f57e85f25368bee9823cba121977a75611e6aa9bfc84b6a9324f0d9",
+				"dweb:/ipfs/Qmen9coaZsDCzs9iKDqkEcyceWuKFPhSjqUoMPFv2hkKbU"
 			]
 		}
 	},
