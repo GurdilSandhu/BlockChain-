@@ -152,14 +152,6 @@
       }
     }
   },
-  "Practice/VotingSystem.sol": {
-    "__sources__": {
-      "Practice/VotingSystem.sol": {
-        "content": "// 2. Voting System\r\n\r\n// Requirements:\r\n\r\n// Mapping to track if a user has voted (address => bool)\r\n// Array to store candidates\r\n// Mapping for vote count (candidate => uint)\r\n// Function to vote:\r\n// Use require to ensure user votes only once\r\n// Candidate must exist (validate using array)\r\n\r\n// Expected Output:\r\n\r\n// Each address votes only once\r\n// Vote count increases correctly\r\n// Invalid candidates rejected\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\n\r\ncontract votingSystem{\r\n    mapping(address => bool) isVoted;\r\n    string[] candidates;\r\n    mapping(string => uint) voteCount;\r\n\r\n    function addCandidate(string memory name) public{\r\n        require(bytes(name).length>0,\"name can not be empty\");\r\n        candidates.push(name);\r\n    }\r\n\r\n    function addVote(uint candidate) public{\r\n        require(!isVoted[msg.sender],\"vote only once\");\r\n        require(candidate<candidates.length,\"invalid candidate\");\r\n        \r\n        string memory candidateName = candidates[candidate];\r\n        voteCount[candidateName] += 1;\r\n        isVoted[msg.sender]= true;\r\n    }\r\n\r\n     function getCandidate(uint256 index) public view returns (string memory, uint256) {\r\n        require(index < candidates.length, \"Invalid candidate index\");\r\n        string memory name = candidates[index];\r\n        return (name, voteCount[name]);\r\n    }\r\n\r\n\r\n}",
-        "file": "Practice/VotingSystem.sol"
-      }
-    }
-  },
   "learning/bank.sol": {
     "__sources__": {
       "learning/bank.sol": {
@@ -176,11 +168,27 @@
       }
     }
   },
+  "Practice/VotingSystem.sol": {
+    "__sources__": {
+      "Practice/VotingSystem.sol": {
+        "content": "// 2. Voting System\r\n\r\n// Requirements:\r\n\r\n// Mapping to track if a user has voted (address => bool)\r\n// Array to store candidates\r\n// Mapping for vote count (candidate => uint)\r\n// Function to vote:\r\n// Use require to ensure user votes only once\r\n// Candidate must exist (validate using array)\r\n\r\n// Expected Output:\r\n\r\n// Each address votes only once\r\n// Vote count increases correctly\r\n// Invalid candidates rejected\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\n\r\ncontract votingSystem{\r\n    mapping(address => bool) isVoted;\r\n    string[] candidates;\r\n    mapping(string => uint) voteCount;\r\n\r\n    function addCandidate(string memory name) public{\r\n        require(bytes(name).length>0,\"name can not be empty\");\r\n        candidates.push(name);\r\n    }\r\n\r\n    function addVote(uint candidate) public{\r\n        require(!isVoted[msg.sender],\"vote only once\");\r\n        require(candidate<candidates.length,\"invalid candidate\");\r\n        \r\n        string memory candidateName = candidates[candidate];\r\n        voteCount[candidateName] += 1;\r\n        isVoted[msg.sender]= true;\r\n    }\r\n\r\n     function getCandidate(uint256 index) public view returns (string memory, uint256) {\r\n        require(index < candidates.length, \"Invalid candidate index\");\r\n        string memory name = candidates[index];\r\n        return (name, voteCount[name]);\r\n    }\r\n\r\n\r\n}",
+        "file": "Practice/VotingSystem.sol"
+      }
+    }
+  },
   "Practice/BankDepositeSystem.sol": {
     "__sources__": {
       "Practice/BankDepositeSystem.sol": {
         "content": "// 4. Bank Deposit System\n\n// Requirements:\n\n// Mapping for balances (address => uint)\n// Array to store all users who deposited\n// Function to deposit:\n// Use require to ensure deposit > 0\n// Add user to array if first-time deposit\n// Function to withdraw:\n// Use require to check sufficient balance\n\n// Expected Output:\n\n// Tracks balances correctly\n// Prevents zero deposits\n// Prevents over-withdrawal\n\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract Bank_Deposite_System {\n    mapping(address => uint) balance;\n    address[] users;\n    mapping(address => bool) isUserAdded;\n\n    function Deposit(uint amount) public {\n        require(amount > 0, \"amount should be greater than 0\");\n        balance[msg.sender] += amount;\n        if (!isUserAdded[msg.sender]) {\n            users.push(msg.sender);\n            isUserAdded[msg.sender] = true;\n        }\n    }\n\n    function Withdraw(uint amount) public {\n        require(\n            amount > 0 && amount < balance[msg.sender],\n            \"amount should be greater than 0 and must be in bank\"\n        );\n        balance[msg.sender] -= amount;\n    }\n\n    function getAllUsers() public view returns (address[] memory, uint[] memory) {\n        uint[] memory all_balances=new uint[](users.length);\n        for (uint i = 0; i < users.length; i++) {\n            all_balances[i]= balance[users[i]];\n        }\n\n        return (users, all_balances);\n    }\n\n     function checkBalance() public view returns(uint){\n        return balance[msg.sender];\n    }\n}\n",
         "file": "Practice/BankDepositeSystem.sol"
+      }
+    }
+  },
+  "Practice/ProductInventory.sol": {
+    "__sources__": {
+      "Practice/ProductInventory.sol": {
+        "content": "// 5. Product Inventory System\r\n\r\n// Requirements:\r\n\r\n// Array of product IDs\r\n// Mapping for product stock (productId => quantity)\r\n// Function to add product:\r\n// Use require to ensure product doesn't already exist\r\n// Function to buy product:\r\n// Use require to check stock availability\r\n\r\n// Expected Output:\r\n\r\n// No duplicate product IDs\r\n// Stock reduces after purchase\r\n// Cannot buy out-of-stock product\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract Product_Inventory{\r\n    uint[] productID;\r\n    mapping (uint => uint) product_stock;\r\n    mapping (uint => bool) isExisted;\r\n\r\n    function addProductID(uint id,uint quantity) public{\r\n        require(!isExisted[id],\"Id already exist\");\r\n       \r\n        productID.push(id);\r\n        product_stock[id]=quantity;\r\n        isExisted[id]=true;\r\n    }\r\n\r\n    function buyProduct(uint id, uint quantity) public{\r\n        require(isExisted[id],\"Invalid Id\");\r\n        require(product_stock[id]>=quantity,\"Invalid quantity\");\r\n     \r\n        product_stock[id]-=quantity;\r\n    }\r\n\r\n     function getFullDetails() public view returns (uint[] memory, uint[] memory) {\r\n        uint[] memory all_products=new uint[](productID.length);\r\n        for (uint i = 0; i < productID.length; i++) {\r\n            all_products[i]= product_stock[productID[i]];\r\n        }\r\n\r\n        return (productID, all_products);\r\n    }\r\n}",
+        "file": "Practice/ProductInventory.sol"
       }
     }
   }
