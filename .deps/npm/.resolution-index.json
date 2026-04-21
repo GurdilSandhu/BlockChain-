@@ -120,19 +120,19 @@
       }
     }
   },
-  "learning/addArray.sol": {
-    "__sources__": {
-      "learning/addArray.sol": {
-        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract addArray{\r\n    uint[] public num = [1,2,3];\r\n\r\n    function addElement(uint value) public{\r\n        num.push(value);\r\n    }\r\n\r\n     function getAll() public view returns(uint[] memory){\r\n        return num;\r\n     } \r\n}",
-        "file": "learning/addArray.sol"
-      }
-    }
-  },
   "learning/simpleWallet.sol": {
     "__sources__": {
       "learning/simpleWallet.sol": {
         "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract Wallet {\n    mapping(address => uint) public balance;\n\n    function deposit(uint value) public {\n        balance[msg.sender] += value;\n    }\n\n    function withdraw(uint value) public{\n        require(balance[msg.sender]>value,\"insufficient balance\");\n        balance[msg.sender] -= value;\n    }\n\n    function checkBalance() public view returns(uint){\n        return balance[msg.sender];\n    }\n}\n",
         "file": "learning/simpleWallet.sol"
+      }
+    }
+  },
+  "learning/array.sol": {
+    "__sources__": {
+      "learning/array.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract Array{\r\n     uint[5] public numbers;\r\n     uint selected_index;\r\n\r\n    function selectIndex(uint index) public returns(uint){\r\n       selected_index = index;\r\n    }\r\n\r\n    function addNumber(uint value) public returns(uint[5] memory){\r\n         numbers[selected_index].push();\r\n    }\r\n\r\n     function getAll() public view returns(uint[5] memory){\r\n        return numbers;\r\n     } \r\n}\r\n",
+        "file": "learning/array.sol"
       }
     }
   },
@@ -144,19 +144,19 @@
       }
     }
   },
-  "Practice/VotingSystem.sol": {
+  "learning/addArray.sol": {
     "__sources__": {
-      "Practice/VotingSystem.sol": {
-        "content": "// 2. Voting System\r\n\r\n// Requirements:\r\n\r\n// Mapping to track if a user has voted (address => bool)\r\n// Array to store candidates\r\n// Mapping for vote count (candidate => uint)\r\n// Function to vote:\r\n// Use require to ensure user votes only once\r\n// Candidate must exist (validate using array)\r\n\r\n// Expected Output:\r\n\r\n// Each address votes only once\r\n// Vote count increases correctly\r\n// Invalid candidates rejected",
-        "file": "Practice/VotingSystem.sol"
+      "learning/addArray.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract addArray{\r\n    uint[] public num = [1,2,3];\r\n\r\n    function addElement(uint value) public{\r\n        num.push(value);\r\n    }\r\n\r\n     function getAll() public view returns(uint[] memory){\r\n        return num;\r\n     } \r\n}",
+        "file": "learning/addArray.sol"
       }
     }
   },
-  "learning/array.sol": {
+  "Practice/VotingSystem.sol": {
     "__sources__": {
-      "learning/array.sol": {
-        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract Array{\r\n     uint[5] public numbers;\r\n     uint selected_index;\r\n\r\n    function selectIndex(uint index) public returns(uint){\r\n       selected_index = index;\r\n    }\r\n\r\n    function addNumber(uint value) public returns(uint[5] memory){\r\n         numbers[selected_index].push();\r\n    }\r\n\r\n     function getAll() public view returns(uint[5] memory){\r\n        return numbers;\r\n     } \r\n}\r\n",
-        "file": "learning/array.sol"
+      "Practice/VotingSystem.sol": {
+        "content": "// 2. Voting System\r\n\r\n// Requirements:\r\n\r\n// Mapping to track if a user has voted (address => bool)\r\n// Array to store candidates\r\n// Mapping for vote count (candidate => uint)\r\n// Function to vote:\r\n// Use require to ensure user votes only once\r\n// Candidate must exist (validate using array)\r\n\r\n// Expected Output:\r\n\r\n// Each address votes only once\r\n// Vote count increases correctly\r\n// Invalid candidates rejected\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\n\r\ncontract votingSystem{\r\n    mapping(address => bool) isVoted;\r\n    string[] candidates;\r\n    mapping(string => uint) voteCount;\r\n\r\n    function addCandidate(string memory name) public{\r\n        require(bytes(name).length>0,\"name can not be empty\");\r\n        candidates.push(name);\r\n    }\r\n\r\n    function addVote(uint candidate) public{\r\n        require(!isVoted[msg.sender],\"vote only once\");\r\n        require(candidate<candidates.length,\"invalid candidate\");\r\n        \r\n        string memory candidateName = candidates[candidate];\r\n        voteCount[candidateName] += 1;\r\n        isVoted[msg.sender]= true;\r\n    }\r\n\r\n     function getCandidate(uint256 index) public view returns (string memory, uint256) {\r\n        require(index < candidates.length, \"Invalid candidate index\");\r\n        string memory name = candidates[index];\r\n        return (name, voteCount[name]);\r\n    }\r\n\r\n\r\n}",
+        "file": "Practice/VotingSystem.sol"
       }
     }
   }
