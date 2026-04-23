@@ -23,8 +23,11 @@ contract MutliModifier{
           amount+=value;
     }
 
-    function Transfer(uint value) public moneyTransfer(value){
+    function Transfer(uint value, address reciever) public moneyTransfer(value){
           
           amount-=value;
+
+       
+
     }
 }

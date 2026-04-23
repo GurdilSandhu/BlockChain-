@@ -28,7 +28,7 @@ contract Registration_Management{
     }
 
     function getFullDetails() public view returns (uint[] memory, string[] memory) {
-        string[] memory all_users=new string[](Total_Reg.length);
+        string[] memory all_users = new string[](Total_Reg.length);
         for (uint i = 0; i < Total_Reg.length; i++) {
             all_users[i]= registrations[Total_Reg[i]];
         }

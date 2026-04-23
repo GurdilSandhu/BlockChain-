@@ -70,11 +70,11 @@
 	},
 	"sources": {
 		"Practice/ControlRegistration.sol": {
-			"keccak256": "0xb96ba28a98d464beda9b5e845b139d9cfffff0c82693e1a8779f96677cdd0e5f",
+			"keccak256": "0xc012b1143d79d1f5cf71823d601a90e9f2ab7f6b92c2da1c93cdccf5b1d9164a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b642a368bc3330a5c0f0792428639c56f4ea5b0b1abdead9a9b32570ffff9868",
-				"dweb:/ipfs/QmVjxSkJEKbbTFYwkNAEuP7M3qcCm3eVvCSqqQisEm4ErP"
+				"bzz-raw://373814f71bbb7555007ce75a5a75d16e443868109797b5cec516bf3f51335f7d",
+				"dweb:/ipfs/QmYh6PWkzJYewJ19dWmmha5dsjPnF7gYEGFK5xqQVJQvdS"
 			]
 		}
 	},
