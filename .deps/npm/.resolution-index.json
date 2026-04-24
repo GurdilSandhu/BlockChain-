@@ -120,14 +120,6 @@
       }
     }
   },
-  "Practice/ToDoList.sol": {
-    "__sources__": {
-      "Practice/ToDoList.sol": {
-        "content": "// 3. Todo List Smart Contract\r\n\r\n// Requirements:\r\n\r\n// Array to store tasks (string)\r\n// Mapping to track task completion (index => bool)\r\n// Function to add task\r\n// Function to mark task complete:\r\n// Use require to check valid index\r\n\r\n// Expected Output:\r\n\r\n// Tasks added in array\r\n// Only valid tasks can be marked complete\r\n// Completion status stored properly\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract ToDo{\r\n    string[] tasks;\r\n    mapping(uint => bool) isComplete;\r\n\r\n    function addTask(string memory task) public{\r\n        require(bytes(task).length>=3,\"Minimum 3 letter word\");\r\n        tasks.push(task);\r\n    }\r\n\r\n    function TickTask(uint index) public{\r\n        require(!isComplete[index],\"Already Completed\");\r\n        require(tasks.length>index,\"Invalid task\");\r\n        \r\n        isComplete[index]= true;\r\n    }\r\n\r\n    function getAllTasks() public view returns (string[] memory, bool[] memory) {\r\n        bool[] memory completionStatus = new bool[](tasks.length);\r\n        for (uint i = 0; i < tasks.length; i++) {\r\n            completionStatus[i] = isComplete[i];\r\n        }\r\n        return (tasks, completionStatus);\r\n    }\r\n\r\n}",
-        "file": "Practice/ToDoList.sol"
-      }
-    }
-  },
   "Practice/BankDepositeSystem.sol": {
     "__sources__": {
       "Practice/BankDepositeSystem.sol": {
@@ -192,22 +184,6 @@
       }
     }
   },
-  "Practice/ControlRegistration.sol": {
-    "__sources__": {
-      "Practice/ControlRegistration.sol": {
-        "content": "//  Controlled User Registration with Capacity Limit\r\n\r\n// Problem Statement:\r\n// Create a contract where users can register themselves, \r\n//but only up to a fixed maximum limit defined during deployment. \r\n//Store all registered users in a list and track their registration status. \r\n//Ensure a user cannot register more than once. Only valid registrations should be accepted, \r\n//and once the limit is reached, no further entries should be allowed.\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract Registration_Management{\r\n    mapping (uint => string) registrations;\r\n    mapping (uint => bool) isRegistered;\r\n    uint[] Total_Reg;\r\n\r\n    modifier checkTotalRegistrations{\r\n        require(Total_Reg.length<10,\"Entries are Full now\");\r\n        _;\r\n    }\r\n    \r\n    function addUser(uint id, string memory name) public checkTotalRegistrations{\r\n       require(!isRegistered[id],\"user already registered\");\r\n       Total_Reg.push(id);\r\n       registrations[id]= name;\r\n       isRegistered[id]=true;\r\n    }\r\n\r\n    function getFullDetails() public view returns (uint[] memory, string[] memory) {\r\n        string[] memory all_users = new string[](Total_Reg.length);\r\n        for (uint i = 0; i < Total_Reg.length; i++) {\r\n            all_users[i]= registrations[Total_Reg[i]];\r\n        }\r\n\r\n        return (Total_Reg, all_users);\r\n    }\r\n}",
-        "file": "Practice/ControlRegistration.sol"
-      }
-    }
-  },
-  "Practice/VotingSystem.sol": {
-    "__sources__": {
-      "Practice/VotingSystem.sol": {
-        "content": "// 2. Voting System\r\n\r\n// Requirements:\r\n\r\n// Mapping to track if a user has voted (address => bool)\r\n// Array to store candidates\r\n// Mapping for vote count (candidate => uint)\r\n// Function to vote:\r\n// Use require to ensure user votes only once\r\n// Candidate must exist (validate using array)\r\n\r\n// Expected Output:\r\n\r\n// Each address votes only once\r\n// Vote count increases correctly\r\n// Invalid candidates rejected\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\n\r\ncontract votingSystem{\r\n    mapping(address => bool) isVoted;\r\n    string[] candidates;\r\n    mapping(string => uint) voteCount;\r\n\r\n    function addCandidate(string memory name) public{\r\n        require(bytes(name).length>0,\"name can not be empty\");\r\n        candidates.push(name);\r\n    }\r\n\r\n    function addVote(uint candidate) public{\r\n        require(!isVoted[msg.sender],\"vote only once\");\r\n        require(candidate<candidates.length,\"invalid candidate\");\r\n        \r\n        string memory candidateName = candidates[candidate];\r\n        voteCount[candidateName] += 1;\r\n        isVoted[msg.sender]= true;\r\n    }\r\n\r\n     function getCandidate(uint256 index) public view returns (string memory, uint256) {\r\n        require(index < candidates.length, \"Invalid candidate index\");\r\n        string memory name = candidates[index];\r\n        return (name, voteCount[name]);\r\n    }\r\n\r\n\r\n}",
-        "file": "Practice/VotingSystem.sol"
-      }
-    }
-  },
   "Practice/ProductInventory.sol": {
     "__sources__": {
       "Practice/ProductInventory.sol": {
@@ -224,11 +200,11 @@
       }
     }
   },
-  "Practice/Voting_Struct.sol": {
+  "Practice/ControlRegistration.sol": {
     "__sources__": {
-      "Practice/Voting_Struct.sol": {
-        "content": "//\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract Voting_Struct{\r\n\r\n}",
-        "file": "Practice/Voting_Struct.sol"
+      "Practice/ControlRegistration.sol": {
+        "content": "//  Controlled User Registration with Capacity Limit\r\n\r\n// Problem Statement:\r\n// Create a contract where users can register themselves, \r\n//but only up to a fixed maximum limit defined during deployment. \r\n//Store all registered users in a list and track their registration status. \r\n//Ensure a user cannot register more than once. Only valid registrations should be accepted, \r\n//and once the limit is reached, no further entries should be allowed.\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract Registration_Management{\r\n    mapping (uint => string) registrations;\r\n    mapping (uint => bool) isRegistered;\r\n    uint[] Total_Reg;\r\n\r\n    modifier checkTotalRegistrations{\r\n        require(Total_Reg.length<10,\"Entries are Full now\");\r\n        _;\r\n    }\r\n    \r\n    function addUser(uint id, string memory name) public checkTotalRegistrations{\r\n       require(!isRegistered[id],\"user already registered\");\r\n       Total_Reg.push(id);\r\n       registrations[id]= name;\r\n       isRegistered[id]=true;\r\n    }\r\n\r\n    function getFullDetails() public view returns (uint[] memory, string[] memory) {\r\n        string[] memory all_users = new string[](Total_Reg.length);\r\n        for (uint i = 0; i < Total_Reg.length; i++) {\r\n            all_users[i]= registrations[Total_Reg[i]];\r\n        }\r\n\r\n        return (Total_Reg, all_users);\r\n    }\r\n}",
+        "file": "Practice/ControlRegistration.sol"
       }
     }
   },
@@ -237,6 +213,51 @@
       "Practice/StudentMark.sol": {
         "content": "// Student Registration and Performance Tracker\r\n\r\n// Problem Statement:\r\n// Create a smart contract where each user can register themselves as a student using their wallet address. \r\n//Store student details such as name and marks using a structured data type. \r\n//The system should automatically determine whether the student has passed or failed based on their marks. \r\n//Ensure that a student can register only once and can update their marks later. \r\n//Only registered students should be able to view or delete their data. \r\n//Proper validation must be applied to restrict invalid marks and prevent unauthorized actions.\r\n//Updat, Delete, add student and get all student \r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract Student_Mark_Management{\r\n    \r\n    address owner;\r\n    constructor(){\r\n        owner=msg.sender;\r\n    }\r\n    modifier checkOwner{\r\n        require(owner==msg.sender,\"Access Denied\");\r\n        _;\r\n    }\r\n\r\n\r\n    struct student{\r\n        uint id;\r\n        string name;\r\n        uint marks;\r\n        bool ispassed;\r\n        address wallet;\r\n    }\r\n\r\n    mapping (uint => student) public students;\r\n    mapping (uint => bool) isExist;\r\n    mapping(address => bool) hasRegistered;\r\n\r\n    uint[] public allIds;\r\n\r\n    function addStudent(uint id, string memory name, uint marks) public{\r\n         require(!hasRegistered[msg.sender],\"Student already exists\");\r\n         require(!isExist[id],\"Student already exists\");\r\n         require(marks>=0 && marks<=100,\"marks can be below 100 and above 0\");\r\n         bool passed = (marks>=34);\r\n         allIds.push(id);\r\n         hasRegistered[msg.sender]= true;\r\n         isExist[id]=true;\r\n         students[id] = student(id,name,marks,passed,msg.sender);\r\n    }\r\n\r\n     function updateStudentMarks(uint id,uint marks) public checkOwner{\r\n         require(isExist[id],\"Student doest not exist\");\r\n          bool passed = (marks>=34);\r\n         students[id] = student(id,students[id].name,marks,passed,students[id].wallet);\r\n    }\r\n\r\n    function deleteStudent(uint id) public{\r\n         require(isExist[id],\"Student not found\");\r\n         delete students[id];\r\n         isExist[id] = false;\r\n         hasRegistered[msg.sender]=false;\r\n\r\n         uint index;\r\n         bool found;\r\n\r\n         for(uint i=0;i<allIds.length;i++){\r\n            if(allIds[id]==id){\r\n                index=i;\r\n                found=true;\r\n                break;\r\n            }\r\n            if(found){\r\n                allIds[index] = allIds[allIds.length-1];\r\n                allIds.pop();\r\n            }\r\n         }\r\n\r\n    }\r\n\r\n    function getAllStudents() public view returns(student[] memory){\r\n        student[] memory accessStudents = new student[](allIds.length);\r\n        for(uint i=0;i<allIds.length;i++){\r\n            accessStudents[i] = students[allIds[i]];\r\n        }\r\n        return accessStudents;\r\n    }\r\n\r\n\r\n}",
         "file": "Practice/StudentMark.sol"
+      }
+    }
+  },
+  "Practice/ToDoList.sol": {
+    "__sources__": {
+      "Practice/ToDoList.sol": {
+        "content": "// 3. Todo List Smart Contract\r\n\r\n// Requirements:\r\n\r\n// Array to store tasks (string)\r\n// Mapping to track task completion (index => bool)\r\n// Function to add task\r\n// Function to mark task complete:\r\n// Use require to check valid index\r\n\r\n// Expected Output:\r\n\r\n// Tasks added in array\r\n// Only valid tasks can be marked complete\r\n// Completion status stored properly\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract ToDo{\r\n    string[] tasks;\r\n    mapping(uint => bool) isComplete;\r\n\r\n    function addTask(string memory task) public{\r\n        require(bytes(task).length>=3,\"Minimum 3 letter word\");\r\n        tasks.push(task);\r\n    }\r\n\r\n    function TickTask(uint index) public{\r\n        require(!isComplete[index],\"Already Completed\");\r\n        require(tasks.length>index,\"Invalid task\");\r\n        \r\n        isComplete[index]= true;\r\n    }\r\n\r\n    function getAllTasks() public view returns (string[] memory, bool[] memory) {\r\n        bool[] memory completionStatus = new bool[](tasks.length);\r\n        for (uint i = 0; i < tasks.length; i++) {\r\n            completionStatus[i] = isComplete[i];\r\n        }\r\n        return (tasks, completionStatus);\r\n    }\r\n\r\n}",
+        "file": "Practice/ToDoList.sol"
+      }
+    }
+  },
+  "Practice/VotingSystem.sol": {
+    "__sources__": {
+      "Practice/VotingSystem.sol": {
+        "content": "// 2. Voting System\r\n\r\n// Requirements:\r\n\r\n// Mapping to track if a user has voted (address => bool)\r\n// Array to store candidates\r\n// Mapping for vote count (candidate => uint)\r\n// Function to vote:\r\n// Use require to ensure user votes only once\r\n// Candidate must exist (validate using array)\r\n\r\n// Expected Output:\r\n\r\n// Each address votes only once\r\n// Vote count increases correctly\r\n// Invalid candidates rejected\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\n\r\ncontract votingSystem{\r\n    mapping(address => bool) isVoted;\r\n    string[] candidates;\r\n    mapping(string => uint) voteCount;\r\n\r\n    function addCandidate(string memory name) public{\r\n        require(bytes(name).length>0,\"name can not be empty\");\r\n        candidates.push(name);\r\n    }\r\n\r\n    function addVote(uint candidate) public{\r\n        require(!isVoted[msg.sender],\"vote only once\");\r\n        require(candidate<candidates.length,\"invalid candidate\");\r\n        \r\n        string memory candidateName = candidates[candidate];\r\n        voteCount[candidateName] += 1;\r\n        isVoted[msg.sender]= true;\r\n    }\r\n\r\n     function getCandidate(uint256 index) public view returns (string memory, uint256) {\r\n        require(index < candidates.length, \"Invalid candidate index\");\r\n        string memory name = candidates[index];\r\n        return (name, voteCount[name]);\r\n    }\r\n\r\n\r\n}",
+        "file": "Practice/VotingSystem.sol"
+      }
+    }
+  },
+  "learning/CourseBuying.sol": {
+    "./CourseSelling.sol": "learning/CourseSelling.sol",
+    "__sources__": {
+      "learning/CourseBuying.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\nimport \"./CourseSelling.sol\";\r\n\r\n\r\ncontract CourseBuying{\r\n    CourseSelling purchase;\r\n\r\n    constructor(address linkaddress){\r\n        purchase = CourseSelling(linkaddress);\r\n    }\r\n\r\n    function addStudent(uint id, string memory name, uint demandfees) public{\r\n          purchase.addStudent(id, name, demandfees);\r\n    }\r\n}",
+        "file": "learning/CourseBuying.sol"
+      },
+      "learning/CourseSelling.sol": {
+        "content": "// teacher can add course duration fee\n// import link send to student\n// add student names\n// student can add offer price\n\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract CourseSelling {\n    address owner;\n    constructor() {\n        owner = msg.sender;\n    }\n    modifier checkOwner() {\n        require(owner == msg.sender, \"Access Denied\");\n        _;\n    }\n\n    struct course {\n        string courseName;\n        string courseDuration;\n        uint fees;\n    }\n    mapping(uint => course) public courses;\n    uint[] allCourseIds;\n\n    function addCourse(\n        uint id,\n        string memory name,\n        string memory duration,\n        uint fees\n    ) external checkOwner {\n        allCourseIds.push(id);\n        courses[id] = course(name, duration, fees);\n    }\n\n    struct student {\n        uint id;\n        string studentName;\n        uint demandFees;\n        address wallet;\n    }\n\n    mapping(uint => student) public students;\n    uint[] allStudentsIds;\n\n    function addStudent(\n        uint id,\n        string memory name,\n        uint demandfees\n    ) external returns (uint) {\n        allStudentsIds.push(id);\n        students[id] = student(id, name, demandfees, msg.sender);\n        return courses[id].fees;\n    }\n}\n",
+        "file": "learning/CourseSelling.sol"
+      }
+    }
+  },
+  "Practice/Voting_Struct.sol": {
+    "__sources__": {
+      "Practice/Voting_Struct.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract Voting_Struct{\r\n    address owner;\r\n    constructor(){\r\n        owner=msg.sender;\r\n    }\r\n    modifier checkOwner{\r\n        require(owner==msg.sender,\"Access Denied\");\r\n        _;\r\n    }\r\n    \r\n    //parties\r\n    struct Party{\r\n        uint id;\r\n        string name;\r\n        uint voteCount;\r\n    }\r\n    mapping (uint => Party) parties;\r\n    mapping (uint => bool) isPartyExist;\r\n    uint[] allPartyIds;\r\n\r\n    function addParty(uint id, string memory name) public checkOwner{\r\n        require(!isPartyExist[id],\"Party already existed\");\r\n        allPartyIds.push(id);\r\n        isPartyExist[id]=true;\r\n        parties[id] = Party(id,name,0);\r\n    }\r\n\r\n    //Voters\r\n     struct Voter{\r\n        uint id;\r\n        string name;\r\n        bool isVoted;\r\n        address wallet;\r\n    }    \r\n    mapping (uint => Voter) Voters;\r\n    mapping (uint => bool) isVoterExisted;\r\n    mapping (address => bool) hasRegistered;\r\n    mapping (address => bool) hasVoted;\r\n    uint[] allVoters;\r\n\r\n    function addVoter(uint id, string memory name) public{\r\n        require(!isVoterExisted[id],\"Voter already existed\");\r\n        require(!hasRegistered[msg.sender], \"Voter already existed\");\r\n        allVoters.push(id);\r\n        isVoterExisted[id]=true;\r\n        hasRegistered[msg.sender]=true;\r\n        Voters[id] = Voter(id,name,false,msg.sender);\r\n    }\r\n\r\n    //Voting\r\n    function vote(uint partyId) public {\r\n        require(hasRegistered[msg.sender], \"Not registered as voter\");\r\n        require(!hasVoted[msg.sender], \"Already voted\");\r\n        require(isPartyExist[partyId], \"Invalid party\");\r\n\r\n        parties[partyId].voteCount++;\r\n        hasVoted[msg.sender] = true;\r\n    }\r\n\r\n    //getVotingDetails\r\n     function getPartyVotes(uint partyId) public view returns (string memory, uint){\r\n        require(isPartyExist[partyId], \"Party not found\");\r\n\r\n        Party memory p = parties[partyId];\r\n        return (p.name, p.voteCount);\r\n    }\r\n\r\n}",
+        "file": "Practice/Voting_Struct.sol"
+      }
+    }
+  },
+  "learning/CourseSelling.sol": {
+    "__sources__": {
+      "learning/CourseSelling.sol": {
+        "content": "// teacher can add course duration fee\n// import link send to student\n// add student names\n// student can add offer price\n\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract CourseSelling {\n    address owner;\n    constructor() {\n        owner = msg.sender;\n    }\n    modifier checkOwner() {\n        require(owner == msg.sender, \"Access Denied\");\n        _;\n    }\n\n    struct course {\n        string courseName;\n        string courseDuration;\n        uint fees;\n    }\n    mapping(uint => course) public courses;\n    uint[] allCourseIds;\n\n    function addCourse(\n        uint id,\n        string memory name,\n        string memory duration,\n        uint fees\n    ) external checkOwner {\n        allCourseIds.push(id);\n        courses[id] = course(name, duration, fees);\n    }\n\n    struct student {\n        uint id;\n        string studentName;\n        uint demandFees;\n        address wallet;\n    }\n\n    mapping(uint => student) public students;\n    uint[] allStudentsIds;\n\n    function addStudent(\n        uint id,\n        string memory name,\n        uint demandfees\n    ) external returns (uint) {\n        allStudentsIds.push(id);\n        students[id] = student(id, name, demandfees, msg.sender);\n        return courses[id].fees;\n    }\n}\n",
+        "file": "learning/CourseSelling.sol"
       }
     }
   }
