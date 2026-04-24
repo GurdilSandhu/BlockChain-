@@ -1,44 +1,32 @@
 {
 	"compiler": {
-		"version": "0.8.34+commit.80d5c536"
+		"version": "0.8.0+commit.c7dfd78e"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
-				"anonymous": false,
+				"inputs": [],
+				"name": "SeeResult",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "operation",
-						"type": "string"
-					},
-					{
-						"indexed": false,
 						"internalType": "uint256",
 						"name": "value",
 						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "result",
-						"type": "uint256"
 					}
 				],
-				"name": "Calculation",
-				"type": "event"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_value",
-						"type": "uint256"
-					}
-				],
-				"name": "Addvalue",
+				"name": "add",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -47,11 +35,11 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_value",
+						"name": "value",
 						"type": "uint256"
 					}
 				],
-				"name": "Dividevalue",
+				"name": "cube",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -60,11 +48,11 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_value",
+						"name": "value",
 						"type": "uint256"
 					}
 				],
-				"name": "Multiplyvalue",
+				"name": "divide",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -73,11 +61,24 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_value",
+						"name": "value",
 						"type": "uint256"
 					}
 				],
-				"name": "Subvalue",
+				"name": "modulo",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "multi",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -94,6 +95,45 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "sqrt",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "square",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "sub",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -109,9 +149,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Practice/calculator.sol": "Calculator"
+			"Practice/exportCalculator.sol": "Calculator"
 		},
-		"evmVersion": "osaka",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -123,12 +163,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Practice/calculator.sol": {
-			"keccak256": "0xd3369d9c2728eec58960987ac2c3d5cc1d4c09a8350140d8d0b27ade26ac6dde",
+		"Practice/exportCalculator.sol": {
+			"keccak256": "0xf6a2042b5d4ce519683218e3a3de3bd85bf90c9a91bbe80b2392a9160ccbde5d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://91d9677d03b637be8cd6e140b5b0690c9597d39d62bea5f5801eb7bd3cf3711f",
-				"dweb:/ipfs/QmQYz8BHhUdM88hLFGotaTU7D179DLaeejdFj8BQqiUtPV"
+				"bzz-raw://1d3e519eba300c0f089611615795a8f7afd8656bb51aaf51172c1c77b6d82c30",
+				"dweb:/ipfs/QmRmYs4sH1fndSNvJWQsW4yHBq56Qnb6nrPMYeuFVcbCqo"
 			]
 		}
 	},

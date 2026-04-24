@@ -1,0 +1,88 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "linkaddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "demandfees",
+						"type": "uint256"
+					}
+				],
+				"name": "addStudent",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"learning/CourseBuying.sol": "CourseBuying"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"learning/CourseBuying.sol": {
+			"keccak256": "0xb537fae1d24be6923d324e149f041d046b013d967a91782bbdbd61e9f3bea5ba",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://67e563b91dca2a2ec5710272774ea15c1549fd1711a8c544d664191ccbcc16c7",
+				"dweb:/ipfs/QmY7CVhBrSqGUgeDjNhiwwpEsGkezpgX6Q1KhHM14WxkNp"
+			]
+		},
+		"learning/CourseSelling.sol": {
+			"keccak256": "0xaa265fb21761af7df1ab9eec4951ba4e7a776eca40ff684d36b71a25ade50b24",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c6198f64dbd3fde6fdc79755b2c3ecc84ce8fd449ecab1f99146d08f217c58a0",
+				"dweb:/ipfs/QmWTijnCYJMnWNa57RHqd4pyEgHxG5eS5BKpRAzrWtCfzz"
+			]
+		}
+	},
+	"version": 1
+}
