@@ -1,0 +1,89 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "conversionAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "currency",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "convert",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Practice/currencyConverting.sol": "UserContract"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Practice/currencyConversion.sol": {
+			"keccak256": "0x95321d0992919100f67f8fef123bda801edb37ae37c12fdf0787ca79346ca287",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://642b34678d428a1a5f30120133b2c7bedb684517af1b46cf1155acfd4350a55b",
+				"dweb:/ipfs/QmVsWFogDsMxPfnVKs7NeGY4ybDDTPR9AYF1kzcPWrxY56"
+			]
+		},
+		"Practice/currencyConverting.sol": {
+			"keccak256": "0xad465e90f7475219f1960c8ad17760458f53f64e1fc671de3df147b252cc4b60",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bc3b96e76047af073ceb6f19f68debb8d1e1df2a1f0455793edeb8597dc7b76a",
+				"dweb:/ipfs/QmXJXD7hD9rz8i2dHs8iT1tUTKthnqXwTwENAb9aMniXGp"
+			]
+		}
+	},
+	"version": 1
+}
