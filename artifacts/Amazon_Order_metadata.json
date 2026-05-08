@@ -1,0 +1,87 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getStatus",
+				"outputs": [
+					{
+						"internalType": "enum createEnum.AmazonStatus",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "status",
+				"outputs": [
+					{
+						"internalType": "enum createEnum.AmazonStatus",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"learning/AmazonOrder.sol": "Amazon_Order"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"learning/AmazonOrder.sol": {
+			"keccak256": "0x8449966d732edf7da92627e44ec79026343a3f516520be8e2a7a450c8d7f00cf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://018becb6d756f196a0b2cfdde7bbcebfa708008d18aff30802cac0d5405d86ac",
+				"dweb:/ipfs/QmPG53NJKhgqtjG73Jt8W7Wr5HSSJ88j91Ewz45WtmUir3"
+			]
+		},
+		"learning/enum.sol": {
+			"keccak256": "0xbe7998d22f6c191ab3da49f76411de1426ae61b30eceed1734c0bf5f6e952123",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://05f957ea074e4f2f06ebc15099984055a968ef10fa16e39046c5a85526765d63",
+				"dweb:/ipfs/QmbJ2wrrowBwSB6ZwLAiBVSPkSTjJy5PfrYk5XJxxJhKm6"
+			]
+		}
+	},
+	"version": 1
+}
