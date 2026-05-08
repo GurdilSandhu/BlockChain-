@@ -1,0 +1,111 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "bank_address",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "bank1",
+				"outputs": [
+					{
+						"internalType": "contract UserBank",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMyBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"learning/Interface/atm.sol": "atm"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"learning/Interface/atm.sol": {
+			"keccak256": "0x727e24c3a3fc60ece178830f015c92180841a7e50233dc4222e0b0ee06909b5d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://16c43c89b52bfde7067e7b5961577b81edb5529b97cb82d7cd0fa902716de064",
+				"dweb:/ipfs/QmSq7rpbbrT4xG55FbtH32JzQv3j4N1YhBLBxWpZx8tPkW"
+			]
+		},
+		"learning/Interface/bank.sol": {
+			"keccak256": "0x514b34a5d15a57c2474afc28828670a217f255b582cedd3b65abc775d842ea82",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0b4c8fd52ea296d3a2a5692d0ab4b41be99263c3e1e149da27a7ddbebf19c913",
+				"dweb:/ipfs/QmZZ79KDezJXYuKKjq95vTWN4ELuozpDjH6WWNPogo4dNw"
+			]
+		}
+	},
+	"version": 1
+}
