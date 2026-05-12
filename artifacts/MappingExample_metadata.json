@@ -1,0 +1,78 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "addUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "users",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"learning/array_mapping.sol": "MappingExample"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"learning/array_mapping.sol": {
+			"keccak256": "0x6f20a9b5348e163bea4d3839eb472d8d0189a932d16ff069f8e449e6ae35e758",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1e0161aa818ccb416a395e72478ab69b07b9805f19194c7d09435fbe2fc48f2d",
+				"dweb:/ipfs/QmWFFkozM3ifNhjteZHt32GNigQd43ZASubdGx4yvjXcof"
+			]
+		}
+	},
+	"version": 1
+}
