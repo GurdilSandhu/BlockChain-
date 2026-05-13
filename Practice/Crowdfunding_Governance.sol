@@ -68,6 +68,8 @@ contract crowdGovernance is Ownable{
    }
 
    mapping(uint => Contribution) public contributions;
+   mapping(address => bool) public isContributorCounted;
+   uint totalContributors;
 
    modifier notPaused(uint _campaignId){
     require(campaigns[_campaignId].status == CampaignStatus.Active,"Campaign is Paused!!");
@@ -80,6 +82,10 @@ contract crowdGovernance is Ownable{
          require(campaigns[_campaignId].timeleft > 0,"Campaign is over");
          contributions[_campaignId] = Contribution(msg.sender,msg.value);
          campaigns[_campaignId].fundsRaised += msg.value;
+         if(!isContributorCounted[msg.sender]){
+            totalContributors++;
+            isContributorCounted[msg.sender] = true;
+         }
          if(campaigns[_campaignId].fundsRaised >= campaigns[_campaignId].goal){
             campaigns[_campaignId].status = CampaignStatus.Completed;
          }
@@ -112,13 +118,15 @@ contract crowdGovernance is Ownable{
    function addVote(uint _campaignId) public payable notPaused(_campaignId){
     require(isCampaignExist[_campaignId] == true,"Campaign does not exist");
     require(voting[_campaignId][msg.sender]==false && msg.sender == contributions[_campaignId].contributor,"Already Voted or not a contributor!!");
-    require(requests[_campaignId].voteCount<3 , "Already executed!!");
     require(requests[_campaignId].amount >= campaigns[_campaignId].fundsRaised,"Not enough funds");
-
+    
+    uint Threshold_Voted_Count = totalContributors/2;
+    require(requests[_campaignId].voteCount<Threshold_Voted_Count , "Already executed!!");
     requests[_campaignId].voteCount++;
     voting[_campaignId][msg.sender] = true;
-    if(requests[_campaignId].voteCount == 3){
-        payable(requests[_campaignId].recipient).transfer(requests[_campaignId].amount);
+    if(requests[_campaignId].voteCount > Threshold_Voted_Count){
+        (bool success, ) = payable(requests[_campaignId].recipient).call{value: requests[_campaignId].amount}("");
+        require(success, "Transfer failed");
         requests[_campaignId].executed = true;
     }
    }

@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.0+commit.c7dfd78e"
+		"version": "0.8.34+commit.80d5c536"
 	},
 	"language": "Solidity",
 	"output": {
@@ -26,7 +26,7 @@
 		"compilationTarget": {
 			"Practice/Crowdfunding_Governance.sol": "Ownable"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "osaka",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -39,11 +39,11 @@
 	},
 	"sources": {
 		"Practice/Crowdfunding_Governance.sol": {
-			"keccak256": "0x08f5c9f860565634c3865b067ad6fe5c8e073207311b7fdf97fb5ca76e6dcef8",
+			"keccak256": "0xe03f1ac7e5f615d06d5efc146bfa934c18bb9402b8e00122cb058bc27552d49b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://041e447f3792766aa60ec727f390a1a7198a0476159a17c4d04731cda830ae92",
-				"dweb:/ipfs/QmcN8LwYHW3wMQ3i9AgFQjbioi4xeFwiUSUdUrApXomnUE"
+				"bzz-raw://bd2e79df4055c3db4415a31eda70d09ecc4076d671d190de3bb865e377909b56",
+				"dweb:/ipfs/QmTQmemvAeinYcZYDxqEQRsjkXW5Yz6XB7J8DbujCTHhP1"
 			]
 		}
 	},
