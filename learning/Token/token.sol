@@ -9,6 +9,4 @@ contract myTokens is ERC20 {
         _mint(msg.sender, 100 * 10 ** decimals());
     }    
 
-    
-
 }

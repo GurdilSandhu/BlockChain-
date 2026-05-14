@@ -422,7 +422,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"sourcify-verified/11155111/0x8a8866e9b0f0ee36227da5dc006378e302866b7e/sources/learning/Token/token.sol": "myTokens"
+			"learning/Token/token.sol": "myTokens"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -476,12 +476,12 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"sourcify-verified/11155111/0x8a8866e9b0f0ee36227da5dc006378e302866b7e/sources/learning/Token/token.sol": {
-			"keccak256": "0x7645e98a771c41e2281d106db599c4476fb91290b33c0f6d6edd20f29a94871b",
+		"learning/Token/token.sol": {
+			"keccak256": "0x65e90c0063080d22c54ab7312d747680f362df7712150c5a2d41c0a6b459e6de",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9e6f98750a28992f410781ed67e494acc26bb31f46e18954837700eaa34741e7",
-				"dweb:/ipfs/QmeNn3p1AMcbuXK7tvd85cXb6h9WHtMXP69E9eMtiaHyxb"
+				"bzz-raw://3d7ddd7b85d04c5ef096fdf3d0600395608782c981f1596839fb1f81c5f2716c",
+				"dweb:/ipfs/QmNXscFQpFjRrFJjkjmNbveP65quqp8A9GrRuyUdCtJqfy"
 			]
 		}
 	},
