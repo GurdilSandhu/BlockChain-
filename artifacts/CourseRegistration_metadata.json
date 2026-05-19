@@ -1,0 +1,257 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_courseName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_teacherName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_totalseats",
+						"type": "uint256"
+					}
+				],
+				"name": "addCourse",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_courseId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_studentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_Name",
+						"type": "string"
+					}
+				],
+				"name": "addStudent_Course",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "courses",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "courseId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "courseName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "teacherName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalSeats",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "enrolledStudents",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_courseId",
+						"type": "uint256"
+					}
+				],
+				"name": "getCourseDetails",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "Id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "Name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "Teacher_Name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "Total_seats",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "Enrolled_Students",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_studentId",
+						"type": "uint256"
+					}
+				],
+				"name": "getStudentDetails",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "Id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "Name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "CourseId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "Enrolled",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "isStudentExist",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "students",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "studentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "courseId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "enrolled",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Practice/CourseRegistration.sol": "CourseRegistration"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Practice/CourseRegistration.sol": {
+			"keccak256": "0xc76ab8ed2f9f09aa5941fe1f9c9d99316b4a84f9a6bac8808083865b3bba7f0b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cbeac2d2482e59b87fee1d5fb07ac084e635b8474b3955a549fcee26d1d46097",
+				"dweb:/ipfs/QmbeoiQ4vjPiCLuCUAnJY9kBuWzw6n6yDibayCctNZFRkM"
+			]
+		}
+	},
+	"version": 1
+}
