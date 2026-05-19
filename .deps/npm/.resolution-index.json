@@ -628,5 +628,13 @@
         "file": "@openzeppelin/contracts@5.6.1/interfaces/draft-IERC6093.sol"
       }
     }
+  },
+  "learning/struct2nd.sol": {
+    "__sources__": {
+      "learning/struct2nd.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract struct_2nd{\r\n\r\n\r\nstruct product{\r\n    uint id;\r\n    string name;\r\n    bool expired;\r\n}\r\n\r\n\r\n\r\nproduct[] public products;\r\nproduct public  products1;\r\n\r\nfunction changeProduct(uint _id,string memory _name, bool _expired) public{\r\n    product memory new_product = product({\r\n        id: _id,\r\n        name: _name,\r\n        expired: _expired\r\n    });\r\n    products1 = new_product;\r\n}\r\n\r\nfunction addproduct(uint id, string memory name, bool expired) public{\r\n   products1 =  product(id,name,expired);\r\n}\r\n\r\nfunction getproduct() view public returns(product memory){\r\n     return products1;\r\n}\r\n\r\nfunction alwaysAvailable() public{\r\n   products.push(product(1,\"sam\",true));\r\n}\r\n\r\nfunction add_products(uint id, string memory name, bool expired) public{\r\n   products.push(product(id,name,expired));\r\n}\r\n\r\n}",
+        "file": "learning/struct2nd.sol"
+      }
+    }
   }
 }
