@@ -11,7 +11,7 @@ contract HundredToWord{
         // 0 - 19
         if (num < 20) {
             return string(abi.encodePacked(units[num]," ","Rupees"));
-        } 
+        }
 
         // 100
         if (num == 100) {
