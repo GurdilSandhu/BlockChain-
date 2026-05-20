@@ -158,7 +158,6 @@ contract NFTMarketplace {
                 index++;
             }
         }
-
         return listed;
     }
 }

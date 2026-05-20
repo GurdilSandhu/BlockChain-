@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "num",
+						"type": "uint256"
+					}
+				],
+				"name": "NumToWord_rupees",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"learning/20may/thousandToword.sol": "HundredToWord"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"learning/20may/thousandToword.sol": {
+			"keccak256": "0x19386786470fd5b6cfd4ad79c41e7c5ed68a7d0dab49dfe0cfae48c68502f0de",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ded4466cd4c3897be208cf7b1a4c1a84d77bfe7846018d74f9feed1c3655007a",
+				"dweb:/ipfs/QmfLocBaSjpRywiHgPbcH4y4AjLKEPfZHNSpxBGha44wbc"
+			]
+		}
+	},
+	"version": 1
+}
